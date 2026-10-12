@@ -596,7 +596,7 @@ button {
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:bottom center;
+  object-position: center;
   transition:transform .8s cubic-bezier(.22,1,.36,1);
 }
 .evercare-service-image-card:hover img {

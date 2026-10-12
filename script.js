@@ -8,6 +8,25 @@ function updateNavbar() {
 }
 window.addEventListener("scroll", updateNavbar);
 updateNavbar();
+
+const aboutPageImages = document.querySelectorAll("body.about-page img");
+function updateAboutImageParallax() {
+  aboutPageImages.forEach(image => {
+    const rect = image.getBoundingClientRect();
+    const progress = Math.min(Math.max((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0), 1);
+    const scale = 1 + progress * 0.18;
+
+    image.style.setProperty("--about-parallax-scale", scale.toFixed(3));
+  });
+}
+
+window.addEventListener("scroll", () => {
+  window.requestAnimationFrame(updateAboutImageParallax);
+}, { passive: true });
+window.addEventListener("resize", updateAboutImageParallax);
+window.addEventListener("load", updateAboutImageParallax);
+updateAboutImageParallax();
+
 const dropdownTriggers = document.querySelectorAll(".dropdown-trigger");
 const dropdowns = document.querySelectorAll(".mega-dropdown");
 function closeAllDropdowns() {
@@ -430,6 +449,35 @@ if (bookingForm) {
 
     const whatsappURL = `https://wa.me/${bookingNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL,"_blank","noopener,noreferrer");
+  });
+}
+
+const contactEnquiryForm = document.querySelector("#contact-enquiry-form");
+
+if (contactEnquiryForm) {
+  const preferredDate = contactEnquiryForm.querySelector("#enquiry-date");
+  const today = new Date();
+  preferredDate.min = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+
+  contactEnquiryForm.addEventListener("submit", event => {
+    event.preventDefault();
+    if (!contactEnquiryForm.reportValidity()) return;
+
+    const formValues = new FormData(contactEnquiryForm);
+    const message = [
+      "Hi EverCare, I'd like to send an enquiry:",
+      "",
+      `Name: ${formValues.get("name")}`,
+      `Phone: ${formValues.get("phone")}`,
+      `Email: ${formValues.get("email")}`,
+      `Service: ${formValues.get("service")}`,
+      `Location: ${formValues.get("location")}`,
+      `Preferred date: ${formValues.get("date")}`,
+      `Message: ${formValues.get("message")}`
+    ].join("\n");
+
+    const whatsappURL = `https://wa.me/27685213715?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   });
 }
 

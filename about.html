@@ -38,7 +38,7 @@
   >
   <link rel="stylesheet" href="about.css">
 </head>
-<body>
+<body class="about-page">
   <header class="site-header">
     <nav class="navbar">
       <a href="/index.html" class="logo">
@@ -132,16 +132,16 @@
         </div>
         <div class="dropdown-links">
           <div class="dropdown-link-column">
-            <a href="services.html#residential-cleaning">
+            <a href="services.html#residential">
               Residential cleaning
             </a>
             <a href="services.html#deep-cleaning">
               Deep cleaning
             </a>
-            <a href="services.html#move-cleaning">
+            <a href="services.html#move-in-move-out">
               Move-in / move-out
             </a>
-            <a href="services.html#commercial-cleaning">
+            <a href="services.html#commercial">
               Office & commercial
             </a>
           </div>
@@ -155,7 +155,7 @@
             <a href="services.html#dishwashing">
               Dishwashing
             </a>
-            <a href="services.html#specialist">
+            <a href="services.html#speciality">
               Specialist
             </a>
           </div>
@@ -183,7 +183,7 @@
             <a href="services.html#commercial">
               Commercial
             </a>
-            <a href="services.html#specialist">
+            <a href="services.html#speciality">
               Specialist
             </a>
           </div>
@@ -192,58 +192,55 @@
     </div>
   </header>
   <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>
-          Who We Are
-        </h1>
-        <p class="hero-description">
-          Reliable, professional cleaning solutions designed around your home, business, and lifestyle,
-        </p>
-        <div class="hero-image-card">
-          <picture>
-            <source media="(max-width: 600px)" srcset="assets/aboutHero.png">
-            <img src="assets/aboutHero.jpg" alt="EverCare cleaning team caring for a welcoming space">
-          </picture>
-        </div>
-        <div class="hero-buttons">
-          <a href="#services" class="button button-primary">
-            View Services
-          </a>
-          <a href="#contact" class="button button-secondary">
-            Request a Quote
-          </a>
-        </div>
-      </div>
+    <section class="about-hero-image" aria-label="A bright, carefully maintained interior">
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets/aboutHero.png">
+        <img src="assets/aboutHero.png" alt="Bright interior maintained with care">
+      </picture>
     </section>
 
-    <section class="evercare-about-section" id="about-evercare">
-      <div class="evercare-about-layout">
-        <div class="evercare-about-sidebar">
-          <span class="evercare-about-eyebrow">GET TO KNOW US</span>
-          <h2>About EverCare <span>Hygiene.</span></h2>
-          <p>Thoughtful cleaning. Professional care. A better standard of hygiene.</p>
+    <div class="about-container">
+      <section class="about-intro" id="about">
+        <div>
+          <span class="about-section-eyebrow">GET TO KNOW US</span>
+          <h1>Who We Are</h1>
         </div>
-
-        <div class="evercare-about-content">
-          <article class="evercare-about-block">
-            <h3>Our Story</h3>
-            <p>EverCare Hygiene is a professional cleaning and hygiene company committed to delivering reliable, high-quality cleaning solutions for homes, businesses, properties and events. We approach every space with care, recognising that a clean environment plays an important role in the way people live, work and experience the world around them.</p>
-            <p>We believe cleaning is about more than appearances. It is about hygiene, comfort, convenience and the peace of mind that comes from knowing your space is in capable hands. Our ambition is to build a trusted cleaning brand recognised for professionalism, consistency and exceptional care, while creating meaningful employment opportunities and developing a skilled, dependable cleaning team.</p>
-          </article>
-
-          <article class="evercare-about-block evercare-about-philosophy">
-            <h3>Our Philosophy<span class="evercare-about-period">.</span></h3>
-            <p>We believe a well-maintained space changes how people feel within it. It brings clarity to the home, confidence to the workplace and comfort to the environments we share. Every detail matters, and every service is an opportunity to make someone's day a little easier.</p>
-            <p>That belief guides the way we work and the standard we strive to uphold. Through thoughtful service, reliable people and a commitment to doing things properly, we aim to make cleanliness one less thing for our clients to worry about.</p>
-            <div class="evercare-about-manifesto">
-              <span>OUR PROMISE</span>
-              <p>Clean spaces.<br>Peace of mind.<br><strong>EverCare.</strong></p>
-            </div>
-          </article>
+        <div class="about-intro-copy">
+          <p class="about-intro-note">Thoughtful cleaning. Professional care. A better standard of hygiene.</p>
+          <p>EverCare Hygiene is a professional cleaning and hygiene company committed to delivering reliable, high-quality cleaning solutions for homes, businesses, properties and events. We approach every space with care, recognising that a clean environment plays an important role in the way people live, work and experience the world around them.</p>
+          <div class="about-actions">
+            <a class="about-button about-button-primary" href="services.html">View Services</a>
+            <a class="about-button about-button-secondary" href="index.html#book">Request a Quote</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="about-feature" id="our-story">
+        <img class="about-feature-image" src="assets/serRes.jpg" alt="EverCare cleaning equipment, ready for professional service">
+        <div class="about-feature-content">
+          <span class="about-section-eyebrow">OUR STORY</span>
+          <h2>Cleaning is about more than just appearances.</h2>
+          <p>It is about hygiene, comfort, convenience and the peace of mind that comes from knowing your space is in capable hands. Our ambition is to build a trusted cleaning brand recognised for professionalism, consistency and exceptional care, while creating meaningful employment opportunities and developing a skilled, dependable cleaning team.</p>
+        </div>
+      </section>
+
+      <section class="about-projects" id="our-philosophy">
+        <div class="about-project-image">
+          <img src="assets/aboutDesk.png" alt="Fresh towels and a robe in a cared-for space">
+        </div>
+        <div class="about-project-info">
+          <span class="about-section-eyebrow">OUR PHILOSOPHY</span>
+          <h2>Care in every detail.</h2>
+          <p>We believe a well-maintained space changes how people feel within it. It brings clarity to the home, confidence to the workplace and comfort to the environments we share. Every detail matters, and every service is an opportunity to make someone's day a little easier.</p>
+          <p>That belief guides the way we work and the standard we strive to uphold. Through thoughtful service, reliable people and a commitment to doing things properly, we aim to make cleanliness one less thing for our clients to worry about.</p>
+        </div>
+      </section>
+
+      <section class="about-statement" id="our-promise">
+        <div class="about-statement-label">Our Promise</div>
+        <p class="about-statement-text">Clean spaces.<br>Peace of mind.<br><strong>EverCare.</strong></p>
+      </section>
+    </div>
 
     <footer class="footer reveal">
 
