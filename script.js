@@ -593,3 +593,60 @@ document.querySelectorAll(".faq-question").forEach(button => {
 
   elements.forEach(element => observer.observe(element));
 })();
+
+
+(() => {
+  const modal = document.getElementById('service-modal');
+  const selector = document.getElementById('service-select');
+  const selectedLabel = document.getElementById('selected-service');
+  const estimatePrice = document.getElementById('estimate-price');
+  const estimateUnit = document.getElementById('estimate-unit');
+  const closeButtons = modal.querySelectorAll('[data-close-modal]');
+  const options = modal.querySelectorAll('[data-service]');
+  let previousFocus = null;
+
+  if (!modal || !selector || !selectedLabel || !estimatePrice || !estimateUnit) return;
+
+  function openModal() {
+    previousFocus = document.activeElement;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    selector.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('service-modal-open');
+    modal.querySelector('.service-modal-panel').focus();
+  }
+
+  function closeModal(restoreFocus = true) {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    selector.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('service-modal-open');
+    if (restoreFocus) (previousFocus || selector).focus();
+  }
+
+  selector.setAttribute('aria-expanded', 'false');
+  selector.addEventListener('click', openModal);
+
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => closeModal());
+  });
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      options.forEach(item => item.classList.remove('is-selected'));
+      option.classList.add('is-selected');
+
+      selectedLabel.textContent = option.dataset.service;
+      estimatePrice.textContent = option.dataset.price;
+      estimateUnit.textContent = option.dataset.unit || 'Price estimate';
+
+      closeModal();
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+})();
