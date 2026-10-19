@@ -19,7 +19,7 @@
     property="og:description"
     content="Premium cleaning and sanitation services for homes, businesses and specialist spaces."
   >
-  <meta property="og:url" content="https://www.evercare.co.za">
+  <meta property="og:url" content="https://www.evercarehygiene.co.za">
   <meta property="og:image" content="images/evercare-og.jpg">
   <meta property="og:image:alt" content="EverCare premium cleaning and sanitation">
   <meta name="twitter:card" content="summary_large_image">
@@ -404,6 +404,120 @@
       </div>
     </section>
     
+    
+    <section class="student-services" id="student-services">
+      <div class="student-services-inner">
+        <div class="student-intro">
+          <span class="student-eyebrow">THOUGHTFULLY PRICED</span>
+          <h2>Good care.<br><span>Student-friendly.</span></h2>
+          <p class="student-description">A little help goes a long way. From fresh laundry to a clean, comfortable room, enjoy practical cleaning services designed around student living and everyday budgets.</p>
+          <div class="student-note">
+            <span class="student-note-mark">✳</span>
+            <div>
+              <h3>Student friendly option</h3>
+              <p>Simple services, transparent estimates and more time for the things that matter.</p>
+            </div>
+          </div>
+          <span class="student-footnote">A cleaner space, without the extra stress.</span>
+        </div>
+
+        <div class="student-estimator">
+          <span class="estimator-eyebrow">EVERCARE HYGIENE</span>
+          <h3>Choose service</h3>
+          <p class="estimator-description">Find the right service for your space and your budget.</p>
+
+          <button type="button" class="service-select" id="service-select" aria-haspopup="dialog" aria-controls="service-modal">
+            <span id="selected-service">Select a service</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg>
+          </button>
+
+          <div class="estimate-result" aria-live="polite">
+            <span class="estimate-label">ESTIMATED PRICE</span>
+            <p class="estimate-price" id="estimate-price">—</p>
+            <p class="estimate-unit" id="estimate-unit">Choose a service to see the estimate.</p>
+          </div>
+
+          <p class="estimate-disclaimer">Prices are estimates and may vary depending on load size, service requirements, location and other factors. Final pricing will be confirmed before your booking.</p>
+
+          <a href="#book" class="student-book-button">Book a service <svg class="inline-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M8 7H17V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <p class="estimator-footer">Thoughtful care. Clear expectations.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="service-modal" id="service-modal" aria-hidden="true">
+      <div class="service-modal-backdrop" data-close-modal></div>
+      <div class="service-modal-panel" role="dialog" aria-modal="true" aria-labelledby="service-modal-title" tabindex="-1">
+        <div class="service-modal-header">
+          <div>
+            <span class="estimator-eyebrow">PERSONALISE YOUR SERVICE</span>
+            <h3 id="service-modal-title">What do you need?</h3>
+          </div>
+          <button type="button" class="service-modal-close" aria-label="Close service selection" data-close-modal>×</button>
+        </div>
+
+        <div class="service-options">
+          <div class="service-group">
+            <h4>Laundry &amp; folding</h4>
+            <button type="button" class="service-option" data-service="Fold clean, dry laundry" data-price="R35–R50" data-unit="Per small basket" data-note="Confirm basket size and laundry requirements.">
+              <span><strong>Fold clean, dry laundry</strong><small>Per small basket</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Wash and fold" data-price="R70–R100" data-unit="Per load / service" data-note="Final price depends on load size.">
+              <span><strong>Wash and fold</strong><small>Washing and folding</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Wash, dry and fold" data-price="R100–R140" data-unit="Per load / service" data-note="Confirm load size, machine costs and whether drying is included.">
+              <span><strong>Wash, dry and fold</strong><small>Complete laundry service</small></span>
+            </button>
+          </div>
+
+          <div class="service-group">
+            <h4>Small student-room services</h4>
+            <button type="button" class="service-option" data-service="Quick room tidy" data-price="R60" data-unit="20–30 minutes" data-note="For a light tidy-up of a student room.">
+              <span><strong>Quick room tidy</strong><small>20–30 minutes</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Bed-making and surface wipe-down" data-price="R50" data-unit="Per service" data-note="Includes bed-making and a surface wipe-down.">
+              <span><strong>Bed-making and surface wipe-down</strong><small>Quick room refresh</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Room tidy + bed-making" data-price="R90" data-unit="Per service" data-note="A tidy room and a freshly made bed.">
+              <span><strong>Room tidy + bed-making</strong><small>Combined service</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Student-room clean" data-price="R120–R160" data-unit="45–60 minutes" data-note="Final price depends on room size and condition.">
+              <span><strong>Student-room clean</strong><small>45–60 minutes</small></span>
+            </button>
+          </div>
+
+          <div class="service-group">
+            <h4>Small cleaning jobs</h4>
+            <button type="button" class="service-option" data-service="Bathroom refresh" data-price="R80–R120" data-unit="Per service" data-note="Final price depends on bathroom size and condition.">
+              <span><strong>Bathroom refresh</strong><small>Small bathroom cleaning</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Kitchenette cleaning" data-price="R70–R100" data-unit="Per service" data-note="Final price depends on kitchenette size and condition.">
+              <span><strong>Kitchenette cleaning</strong><small>Small kitchen area</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Dishes only" data-price="R40–R60" data-unit="Per service" data-note="Final price depends on the amount of dishes.">
+              <span><strong>Dishes only</strong><small>Dishwashing service</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Ironing (small bundle)" data-price="R50–R80" data-unit="Per small bundle" data-note="Confirm item count and garment requirements.">
+              <span><strong>Ironing (small bundle)</strong><small>Small bundle of clothing</small></span>
+            </button>
+          </div>
+
+          <div class="service-group">
+            <h4>Student bundles</h4>
+            <button type="button" class="service-option" data-service="Laundry folding + room tidy" data-price="R100" data-unit="Per bundle" data-note="Bundle includes laundry folding and a room tidy.">
+              <span><strong>Laundry folding + room tidy</strong><small>Convenient two-service bundle</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Room clean + bathroom refresh" data-price="R170" data-unit="Per bundle" data-note="Bundle includes a room clean and bathroom refresh.">
+              <span><strong>Room clean + bathroom refresh</strong><small>A more complete reset</small></span>
+            </button>
+            <button type="button" class="service-option" data-service="Student reset (room, dishes, bed)" data-price="R150" data-unit="Per bundle" data-note="Bundle includes room tidying, dishes and bed-making.">
+              <span><strong>Student reset (room, dishes, bed)</strong><small>Three essentials in one visit</small></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section class="booking-section" id="book">
       <div class="booking-container">
         <div class="booking-intro">
@@ -438,6 +552,7 @@
               <button type="button" class="booking-pill" data-value="Commercial" aria-pressed="false">Commercial</button>
               <button type="button" class="booking-pill" data-value="Move in/out" aria-pressed="false">Move in/out</button>
               <button type="button" class="booking-pill" data-value="Speciality" aria-pressed="false">Speciality</button>
+              <button type="button" class="booking-pill" data-value="Student services" aria-pressed="false">Student services</button>
             </div>
             <input type="hidden" name="service" id="booking-service" required>
           </fieldset>
