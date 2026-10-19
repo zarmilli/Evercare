@@ -1323,6 +1323,87 @@ button {
   }
 }
 
+
+/* Student-friendly services */
+.student-services{padding:100px 5%;background:var(--off-white,#f8f9f6);font-family:'Poppins',sans-serif}
+.student-services-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+.student-intro,.student-estimator{min-width:0;border-radius:26px;overflow:hidden}
+.student-intro{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;padding:clamp(32px,5vw,68px);background:#e9ede6;min-height:560px}
+.student-intro:before,.student-intro:after{content:"";position:absolute;border:1px solid rgba(48,72,58,.13);border-radius:50%;z-index:-1;pointer-events:none}
+.student-intro:before{width:340px;height:340px;right:-125px;top:-130px}
+.student-intro:after{width:240px;height:240px;right:-75px;top:-80px}
+.student-eyebrow,.estimator-eyebrow{display:block;font-size:10px;font-weight:600;letter-spacing:2px;line-height:1.6}
+.student-eyebrow{color:var(--green-forest,#30483a);margin-bottom:24px}
+.student-intro h2{font-size:clamp(38px,4.5vw,64px);font-weight:500;letter-spacing:-2.8px;line-height:1.08;margin:0 0 24px;color:#202820}
+.student-intro h2 span{color:var(--green-forest,#30483a)}
+.student-description{max-width:440px;color:#626b63;font-size:14px;line-height:1.9;margin:0}
+.student-note{display:flex;gap:16px;align-items:flex-start;margin-top:42px;padding:23px 0;border-top:1px solid rgba(48,72,58,.2);border-bottom:1px solid rgba(48,72,58,.2)}
+.student-note-mark{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:var(--green-forest,#30483a);color:#fff;font-size:19px}
+.student-note h3{font-size:14px;font-weight:500;margin:1px 0 7px;color:#27362c}
+.student-note p{font-size:12px;line-height:1.8;color:#687168;margin:0;max-width:330px}
+.student-footnote{margin-top:26px;color:#778077;font-size:10px;letter-spacing:.5px}
+.student-estimator{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(30px,4vw,56px);background:#fff;border:1px solid #e8ebe6;box-shadow:0 18px 55px rgba(24,40,29,.045)}
+.estimator-eyebrow{color:#8a9389;margin-bottom:14px}
+.student-estimator h3{font-size:clamp(25px,3vw,34px);font-weight:500;letter-spacing:-1px;color:#252d26;margin:0}
+.estimator-description{font-size:12px;line-height:1.8;color:#7b837a;margin:12px 0 30px;max-width:320px}
+.service-select{width:100%;max-width:410px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 18px;border:1px solid #dfe4dc;border-radius:12px;background:#fbfcfa;color:#39463b;font:400 12px 'Poppins',sans-serif;text-align:left;cursor:pointer;transition:border-color .2s,background .2s}
+.service-select:hover,.service-select:focus-visible{border-color:var(--green-forest,#30483a);background:#fff;outline:none}
+.service-select svg{width:18px;height:18px;flex:0 0 18px;fill:none;stroke:currentColor;stroke-width:1.5;transition:transform .2s}
+.service-select[aria-expanded="true"] svg{transform:rotate(180deg)}
+.estimate-result{width:100%;max-width:410px;padding:34px 12px 26px}
+.estimate-label{display:block;color:#92998f;font-size:9px;font-weight:600;letter-spacing:1.8px}
+.estimate-price{font-size:clamp(36px,4vw,50px);font-weight:500;letter-spacing:-1.8px;line-height:1.2;color:var(--green-forest,#30483a);margin:12px 0 6px}
+.estimate-unit{font-size:11px;line-height:1.7;color:#81887f;margin:0}
+.estimate-disclaimer{max-width:370px;margin:0 auto 24px;color:#a0a59e;font-size:10px;line-height:1.8}
+.student-book-button{width:100%;max-width:410px;display:flex;align-items:center;justify-content:center;gap:14px;padding:16px 22px;border-radius:999px;background:var(--green-forest,#30483a);color:#fff;text-decoration:none;font-size:12px;font-weight:500;transition:background .2s,transform .2s}
+.student-book-button:hover{background:var(--champagne-gold);}
+.student-book-button span{font-size:16px}
+.estimator-footer{margin:18px 0 0;color:#a0a59e;font-size:9px;letter-spacing:.5px}
+
+/* Service selection modal */
+body.service-modal-open{overflow:hidden}
+.service-modal{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:22px;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s,visibility .2s}
+.service-modal.is-open{visibility:visible;opacity:1;pointer-events:auto}
+.service-modal-backdrop{position:absolute;inset:0;background:rgba(15,23,17,.62);backdrop-filter:blur(5px)}
+.service-modal-panel{position:relative;width:min(100%,620px);max-height:min(82vh,760px);display:flex;flex-direction:column;background:#fff;border-radius:22px;box-shadow:0 24px 90px rgba(0,0,0,.2);overflow:hidden;transform:translateY(10px);transition:transform .2s}
+.service-modal.is-open .service-modal-panel{transform:translateY(0)}
+.service-modal-header{position:relative;display:flex;justify-content:center;align-items:center;gap:20px;padding:26px 68px 22px;border-bottom:1px solid #edf0eb;text-align:center}
+.service-modal-header .estimator-eyebrow{margin-bottom:8px}
+.service-modal-header h3{font-size:24px;letter-spacing:-.7px;font-weight:500;margin:0;color:#27342a}
+.service-modal-close{position:absolute;right:28px;top:50%;transform:translateY(-50%);width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border:1px solid #e5e9e2;border-radius:50%;background:#fff;color:#4d594e;font-size:25px;line-height:1;cursor:pointer}
+.service-modal-close:hover{background:#f0f3ee}
+.service-options{overflow-y:auto;overscroll-behavior:contain;padding:0 28px 20px}
+.service-group{padding:22px 0 18px}
+.service-group+.service-group{border-top:1px solid #e7ebe4}
+.service-group h4{font-size:11px;font-weight:600;letter-spacing:.4px;color:var(--green-forest,#30483a);margin:0 0 10px;text-align:center}
+.service-option{width:100%;display:flex;align-items:center;justify-content:center;gap:16px;padding:13px 12px;border:0;border-radius:10px;background:transparent;text-align:center;cursor:pointer;transition:background .15s}
+.service-option:hover,.service-option:focus-visible{background:#f3f6f1;outline:none}
+.service-option>span:first-child{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}
+.service-option strong{font-size:12px;line-height:1.6;font-weight:500;color:#303b31}
+.service-option small{font-size:10px;line-height:1.5;color:#929990}
+.service-option.is-selected{background:#edf2eb}
+.service-option.is-selected strong{color:var(--green-forest,#30483a)}
+@media(max-width:800px){
+  .student-services{padding:64px 5%}
+  .student-services-inner{grid-template-columns:1fr;gap:16px}
+  .student-intro{min-height:auto;padding:38px 28px}
+  .student-intro h2{font-size:clamp(38px,9vw,54px)}
+  .student-note{margin-top:30px}
+  .student-estimator{padding:38px 24px}
+  .estimate-price{font-size:42px}
+  .service-modal{padding:12px}
+  .service-modal-panel{max-height:88dvh;border-radius:18px}
+  .service-modal-header{padding:22px 60px 18px}
+  .service-modal-close{right:16px}
+  .service-options{padding:0 16px 16px}
+  .service-group{padding:18px 0 14px}
+  .service-option{padding:12px 8px;gap:10px}
+  .service-option strong{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-modal,.service-modal-panel,.service-select svg,.student-book-button,.service-option{transition:none}
+}
+
 .booking-section {
   padding:140px 30px;
   background:var(--green-forest);
